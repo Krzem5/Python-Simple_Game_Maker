@@ -401,7 +401,7 @@ class Main(Maze):
     def get_file(self):
         global open_file
         self.save_project()
-        f=askopenfilename(filetypes=[('GameMaker files','.gmc')])
+        f=askopenfilename(filetypes=[('GameMaker files','.txt')])
         if not f=='':
             open_file=str(f)
             f=open(f,'r')
@@ -410,7 +410,7 @@ class Main(Maze):
     def save(self):
         global file_save,open_file,new_pr
         if (new_pr or not open_file==''):
-            f=asksaveasfilename(filetypes=[('GameMaker files','.gmc')])
+            f=asksaveasfilename(filetypes=[('GameMaker files','.txt')])
             if not f=='':
                 open_file=str(f)
                 f=open(f,'w')
@@ -518,7 +518,7 @@ class Main(Maze):
         self.mbar.add_cascade(menu=self.make_menu_file(self.mbar),label='file')
         self.tk['menu']=self.mbar
         self.auto_save(mn=False)
-        
+
 global items,file_save,open_file,new_pr,all_elems_obj,mn_self,name_list
 items,file_save,open_file,new_pr,all_elems_obj,mn_self,name_list=[],{},'',False,[],None,[]
 Main()
